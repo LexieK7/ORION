@@ -1,0 +1,21 @@
+,train,val,test
+"Anaplastic large cell lymphoma,ALK negative",12,1,1
+"Anaplastic large cell lymphoma,ALK positive",34,4,4
+Angioimmunoblastic T-cell lymphoma,27,4,4
+B-lymphoblastic lymphoma,13,2,2
+Burkitt lymphoma,19,2,2
+"Chronic lymphocytic leukemia, small lymphocytic lymphoma",27,4,4
+"Classical Hodgkins lymphoma, lymphocyte-rich type",7,1,1
+"Classical Hodgkins lymphoma, mixed cell type",12,2,2
+"Classical Hodgkins lymphoma, nodular sclerosis type",28,3,3
+"Diffuse large B-cell lymphoma, non-specific type",25,3,3
+Extranodal NK-T-cell lymphoma,15,2,2
+Follicular lymphoma,28,3,3
+High-grade B-cell lymphoma with MYC and BCL2 rearrangement,27,3,3
+Lymphoma in the intraductal marginal zone,15,2,2
+Lymphoma of the extranodal margin area of mucosa-associated tissue,26,3,3
+Mantle cell lymphoma,23,3,3
+Nodular lymphocyte-predominant Hodgkins lymphoma,11,2,2
+"Peripheral T-cell lymphoma, NOS",20,2,2
+Plasma cell tumor,30,4,4
+T-lymphoblastic lymphoma,15,2,2

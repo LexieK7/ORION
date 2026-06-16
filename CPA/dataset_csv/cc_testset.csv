@@ -1,0 +1,101 @@
+case_id,slide_id,label
+patient_1,918636,Burkitt lymphoma
+patient_2,978822,High-grade B-cell lymphoma with MYC and BCL2 rearrangement
+patient_3,942688,"Classical Hodgkins lymphoma, mixed cell type"
+patient_4,999149,Mantle cell lymphoma
+patient_5,888817,High-grade B-cell lymphoma with MYC and BCL2 rearrangement
+patient_6,923026,"Peripheral T-cell lymphoma, NOS"
+patient_7,1009177,"Diffuse large B-cell lymphoma, non-specific type"
+patient_8,769872,Lymphoma in the intraductal marginal zone
+patient_9,810859,Extranodal NK-T-cell lymphoma
+patient_10,944846,T-lymphoblastic lymphoma
+patient_11,929646,"Classical Hodgkins lymphoma, nodular sclerosis type"
+patient_12,1005234,Angioimmunoblastic T-cell lymphoma
+patient_13,815571,"Anaplastic large cell lymphoma,ALK positive"
+patient_14,702933,"Anaplastic large cell lymphoma,ALK negative"
+patient_15,832860,Extranodal NK-T-cell lymphoma
+patient_16,937651,"Chronic lymphocytic leukemia, small lymphocytic lymphoma"
+patient_17,999762,Lymphoma of the extranodal margin area of mucosa-associated tissue
+patient_18,836197,Angioimmunoblastic T-cell lymphoma
+patient_19,895139,"Peripheral T-cell lymphoma, NOS"
+patient_20,827198,Angioimmunoblastic T-cell lymphoma
+patient_21,963411,B-lymphoblastic lymphoma
+patient_22,1010013,"Diffuse large B-cell lymphoma, non-specific type"
+patient_23,824396,Lymphoma in the intraductal marginal zone
+patient_24,1010297,Follicular lymphoma
+patient_25,1012581,"Anaplastic large cell lymphoma,ALK negative"
+patient_26,952439,B-lymphoblastic lymphoma
+patient_27,847350,"Anaplastic large cell lymphoma,ALK negative"
+patient_28,716400,"Anaplastic large cell lymphoma,ALK positive"
+patient_29,899817,T-lymphoblastic lymphoma
+patient_30,1011134,Lymphoma of the extranodal margin area of mucosa-associated tissue
+patient_31,910871,Burkitt lymphoma
+patient_32,995348,Lymphoma of the extranodal margin area of mucosa-associated tissue
+patient_33,999554,Follicular lymphoma
+patient_34,917961,"Classical Hodgkins lymphoma, nodular sclerosis type"
+patient_35,896537,"Anaplastic large cell lymphoma,ALK negative"
+patient_36,940877,"Classical Hodgkins lymphoma, nodular sclerosis type"
+patient_37,846750,Extranodal NK-T-cell lymphoma
+patient_38,988191,Burkitt lymphoma
+patient_39,1000558,Mantle cell lymphoma
+patient_40,793305,Nodular lymphocyte-predominant Hodgkins lymphoma
+patient_41,957296,"Chronic lymphocytic leukemia, small lymphocytic lymphoma"
+patient_42,1002135,"Classical Hodgkins lymphoma, lymphocyte-rich type"
+patient_43,811878,"Anaplastic large cell lymphoma,ALK positive"
+patient_44,980754,"Classical Hodgkins lymphoma, mixed cell type"
+patient_45,768130,"Anaplastic large cell lymphoma,ALK positive"
+patient_46,1005663,Follicular lymphoma
+patient_47,939315,B-lymphoblastic lymphoma
+patient_48,958342,Nodular lymphocyte-predominant Hodgkins lymphoma
+patient_49,994639,"Classical Hodgkins lymphoma, mixed cell type"
+patient_50,954374,Lymphoma in the intraductal marginal zone
+patient_51,1005213,"Diffuse large B-cell lymphoma, non-specific type"
+patient_52,1009007,Follicular lymphoma
+patient_53,944643,"Classical Hodgkins lymphoma, mixed cell type"
+patient_54,748477,"Classical Hodgkins lymphoma, lymphocyte-rich type"
+patient_55,988671,Lymphoma of the extranodal margin area of mucosa-associated tissue
+patient_56,999325,B-lymphoblastic lymphoma
+patient_57,992529,Mantle cell lymphoma
+patient_58,922185,"Chronic lymphocytic leukemia, small lymphocytic lymphoma"
+patient_59,852342,Angioimmunoblastic T-cell lymphoma
+patient_60,910717,"Classical Hodgkins lymphoma, lymphocyte-rich type"
+patient_61,937225,"Classical Hodgkins lymphoma, nodular sclerosis type"
+patient_62,788950,"Anaplastic large cell lymphoma,ALK positive"
+patient_63,967715,"Peripheral T-cell lymphoma, NOS"
+patient_64,979259,Mantle cell lymphoma
+patient_65,1012775,"Peripheral T-cell lymphoma, NOS"
+patient_66,958206,"Classical Hodgkins lymphoma, mixed cell type"
+patient_67,831699,Lymphoma in the intraductal marginal zone
+patient_68,811707,Extranodal NK-T-cell lymphoma
+patient_69,1010011,Angioimmunoblastic T-cell lymphoma
+patient_70,927554,T-lymphoblastic lymphoma
+patient_71,1002021,"Classical Hodgkins lymphoma, nodular sclerosis type"
+patient_72,997780,Lymphoma of the extranodal margin area of mucosa-associated tissue
+patient_73,897212,High-grade B-cell lymphoma with MYC and BCL2 rearrangement
+patient_74,992078,High-grade B-cell lymphoma with MYC and BCL2 rearrangement
+patient_75,904785,"Classical Hodgkins lymphoma, lymphocyte-rich type"
+patient_76,989768,Burkitt lymphoma
+patient_77,961023,High-grade B-cell lymphoma with MYC and BCL2 rearrangement
+patient_78,934288,"Chronic lymphocytic leukemia, small lymphocytic lymphoma"
+patient_79,902133,"Peripheral T-cell lymphoma, NOS"
+patient_80,1007189,"Anaplastic large cell lymphoma,ALK negative"
+patient_81,840163,Extranodal NK-T-cell lymphoma
+patient_82,H268091,"Classical Hodgkins lymphoma, lymphocyte-rich type"
+patient_83,H240020,Nodular lymphocyte-predominant Hodgkins lymphoma
+patient_84,H221017,Nodular lymphocyte-predominant Hodgkins lymphoma
+patient_85,H239199,Nodular lymphocyte-predominant Hodgkins lymphoma
+patient_86,P045116,Plasma cell tumor
+patient_87,P035008,Mantle cell lymphoma
+patient_88,P041131,Plasma cell tumor
+patient_89,P031512,Burkitt lymphoma
+patient_90,P045643,Plasma cell tumor
+patient_91,P045405,Plasma cell tumor
+patient_92,P043632,Lymphoma in the intraductal marginal zone
+patient_93,P022704,T-lymphoblastic lymphoma
+patient_94,P046994,Plasma cell tumor
+patient_95,P045070,Follicular lymphoma
+patient_96,P033058,B-lymphoblastic lymphoma
+patient_97,P030147,T-lymphoblastic lymphoma
+patient_98,P046325,"Diffuse large B-cell lymphoma, non-specific type"
+patient_99,P044729,"Diffuse large B-cell lymphoma, non-specific type"
+patient_100,P027838,"Chronic lymphocytic leukemia, small lymphocytic lymphoma"
