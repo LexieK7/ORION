@@ -11,7 +11,6 @@ This repository contains the open-source workflow code for the text-based ORION 
 - 🧭 **Full interactive workflow:** `python chat.py`
 - 📊 **Batch Excel workflow:** `python batch_test.py`
 - 🧬 **Agents:** CTA, IPA, MWPA, IDA
-- 🖼️ **External image agent:** CPA/H&E model, maintained separately
 - 🔐 **Privacy-aware release:** no patient case-bank retrieval or licensed literature retrieval included
 
 ## Overview
