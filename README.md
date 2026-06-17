@@ -4,20 +4,19 @@
 
 ORION is an **autonomous, interpretable, multi-agent, multimodal diagnostic system** designed to model disease diagnosis as a sequential process of collaborative clinical reasoning rather than a single static prediction task. The system coordinates specialized agents for clinical interpretation, diagnostic planning, immunohistochemistry recommendation, molecular testing recommendation, and final multimodal evidence integration.
 
-This repository contains the open-source workflow code for the text-based ORION agents. 
+This repository contains the open-source workflow code for the ORION agents. 
 
 ## Quick Links
 
 - 🧭 **Full interactive workflow:** `python chat.py`
 - 📊 **Batch Excel workflow:** `python batch_test.py`
-- 🧬 **Agents:** CTA, IPA, MWPA, IDA
-- 🔐 **Privacy-aware release:** no patient case-bank retrieval or licensed literature retrieval included
+- 🧬 **Agents:** CTA, CPA, IPA, MWPA, IDA
 
 ## Overview
 
 Clinical diagnosis requires progressive integration of heterogeneous evidence, including clinical presentation, imaging, H&E morphology, immunophenotype, molecular testing, and clinician feedback. ORION implements this process as a traceable multi-agent workflow in which each agent contributes a structured diagnostic reasoning step and writes its outputs to JSON files that can be inspected, reused, or corrected by clinicians.
 
-In our study, ORION was evaluated on multicenter retrospective and prospective real-world lymphoma cohorts. By progressively integrating multimodal evidence and clinician-guided interaction, ORION improved diagnostic performance across sequential diagnostic stages and enabled transparent human-AI collaboration.
+In our study, ORION was evaluated on multicenter retrospective and prospective real-world cohorts. By progressively integrating multimodal evidence and clinician-guided interaction, ORION improved diagnostic performance across sequential diagnostic stages and enabled transparent human-AI collaboration.
 
 **Keywords:** multi-agent, real-world diagnosis, human-AI collaboration, multimodal diagnosis, interpretable AI
 
@@ -27,8 +26,6 @@ In our study, ORION was evaluated on multicenter retrospective and prospective r
 - 🔎 **Traceable outputs:** each agent stores prompts, raw responses, parsed JSON, and upstream evidence paths.
 - 👩‍⚕️ **Human-AI collaboration:** clinicians can inspect, intervene, and provide test results at each stage.
 - 🧫 **Diagnostic planning:** recommends IHC and molecular/ISH tests when needed.
-- 🔄 **Interactive and batch modes:** supports both case-by-case use and Excel-based batch testing.
-- 🧩 **LLM-agnostic deployment:** can be adapted to advanced OpenAI-compatible LLM providers.
 
 ## Important Note About This Release
 
@@ -45,10 +42,11 @@ Therefore, this release focuses on the deployable multi-agent reasoning workflow
 
 | File | Agent | Role |
 |---|---|---|
-| `CTA.py` | Clinical Text Agent | Performs preliminary lymphoma differential diagnosis from clinical information and imaging summaries. |
-| `IPA.py` | Immunophenotyping Planning Agent | Recommends a case-specific IHC panel based on CTA and H&E model predictions. |
-| `MWPA.py` | Molecular Workup Planning Agent | Integrates CTA, H&E, IPA, and completed IHC results, then recommends molecular, cytogenetic, pathogen-associated, or ISH tests when needed. |
-| `IDA.py` | Integrated Diagnosis Agent | Produces the final integrated lymphoma diagnostic impression from all available upstream evidence. |
+| `CTA.py` | Clinical Text Agent | Performs preliminary differential diagnosis from clinical information and imaging summaries. |
+| `CTA.py` | Context-aware Pathology Agent | H&E image analysis. |
+| `IPA.py` | Immunophenotyping Planning Agent | Recommends a case-specific IHC panel based on CTA and CPA predictions. |
+| `MWPA.py` | Molecular Workup Planning Agent | Integrates CTA, CPA, IPA, and completed IHC results, then recommends molecular, cytogenetic, pathogen-associated, or ISH tests when needed. |
+| `IDA.py` | Integrated Diagnosis Agent | Produces the final integrated  diagnostic impression from all available upstream evidence. |
 | `chat.py` | Interactive Orchestrator | Runs the full workflow interactively by case ID. |
 | `batch_test.py` | Batch Test Orchestrator | Runs all agents sequentially using Excel input files. |
 | `clinical_cases.xlsx` | Example data | Two demo clinical cases for batch testing. |
@@ -61,12 +59,12 @@ Therefore, this release focuses on the deployable multi-agent reasoning workflow
 The complete ORION workflow in this repository is:
 
 ```text
-CTA -> CPA/H&E result input -> IPA -> MWPA -> IDA
+CTA -> CPA -> IPA -> MWPA -> IDA
 ```
 
 1. **CTA** receives clinical information and imaging summaries.
-2. **CPA/H&E image model** runs outside this repository and provides H&E prediction results.
-3. **IPA** recommends an IHC panel based on CTA and H&E predictions.
+2. **CPA** provides H&E prediction results.
+3. **IPA** recommends an IHC panel based on CTA and CPA.
 4. **MWPA** reads the IPA-recommended IHC panel and accepts completed IHC results.
 5. **IDA** reads MWPA-recommended molecular/ISH tests and accepts completed molecular results for final diagnosis.
 
@@ -88,7 +86,7 @@ Python >= 3.9
 
 ## LLM Configuration
 
-The current scripts use the OpenAI-compatible DeepSeek API client:
+The current scripts use the OpenAI-compatible API client:
 
 ```python
 client = OpenAI(
@@ -136,7 +134,7 @@ The interface will ask for:
 
 1. Case ID.
 2. Clinical information for CTA.
-3. H&E image model prediction results from your external CPA/H&E model.
+3. H&E image model prediction results from CPA.
 4. IHC results for the IPA-recommended `final_IHC_panel`.
 5. Molecular/ISH/cytogenetic results for the MWPA-recommended `suggested_next_tests`, if MWPA certainty is not high.
 
@@ -174,7 +172,7 @@ outputs/cta_results/clinical_info/{case_id}.json
 python IPA.py --interactive
 ```
 
-IPA reads CTA output by case ID and asks the user to input H&E model predictions.
+IPA reads CTA output by case ID and asks the user to input CPA predictions.
 
 Accepted H&E input examples:
 
@@ -205,7 +203,7 @@ outputs/ipa_results/he_predictions/{case_id}.json
 python MWPA.py --interactive
 ```
 
-MWPA reads CTA, H&E, and IPA outputs by case ID. It displays the IPA-recommended `final_IHC_panel` and asks the user to enter completed IHC results marker by marker.
+MWPA reads CTA, CPA, and IPA outputs by case ID. It displays the IPA-recommended `final_IHC_panel` and asks the user to enter completed IHC results marker by marker.
 
 If the user leaves all IHC results empty, the case is treated as:
 
@@ -226,7 +224,7 @@ outputs/mwpa_results/ihc_results/{case_id}.json
 python IDA.py --interactive
 ```
 
-IDA reads CTA, H&E, IPA, MWPA, and completed IHC results by case ID. It displays MWPA-recommended `suggested_next_tests` and asks the user to enter completed molecular, cytogenetic, pathogen-associated, or ISH results.
+IDA reads CTA, CPA, IPA, MWPA, and completed IHC results by case ID. It displays MWPA-recommended `suggested_next_tests` and asks the user to enter completed molecular, cytogenetic, pathogen-associated, or ISH results.
 
 If the user leaves all results empty, the case is treated as:
 
@@ -326,6 +324,9 @@ Example:
 EBER in situ hybridization: negative; MYC rearrangement FISH: negative
 ```
 
+
+**It should be noted that the "Example" mentioned here is not real; it is a randomly generated example by the AI for testing purposes.**
+
 ## Output Structure
 
 ```text
@@ -360,9 +361,7 @@ This makes the diagnostic chain traceable and auditable.
 
 ## External CPA/H&E Image Agent
 
-The CPA/H&E image analysis component is not included in this folder. It should provide H&E model prediction results that can be entered interactively or saved into `he_predictions.xlsx` for batch mode.
-
-Please refer to the CPA repository or folder for its own documentation.
+Please refer to the CPA repository for its documentation.
 
 ## Citation
 
@@ -371,24 +370,12 @@ If you use ORION in your research, please cite:
 ```bibtex
 @article{orion2026,
   title   = {Multi-agent collaborative reasoning enables interpretable and adaptive clinical diagnosis},
-  author  = {Your Name and Collaborators},
+  author  = {},
   journal = {To be updated},
   year    = {2026},
   note    = {ORION: an autonomous, interpretable multi-agent multimodal diagnostic system}
 }
 ```
-
-Please replace the placeholder author, journal, and publication information with the official citation once available.
-
-## Privacy and Licensing
-
-This release excludes:
-
-- Historical patient case retrieval
-- Private local case banks
-- Licensed literature retrieval databases
-
-These components were removed to protect patient privacy and avoid redistribution of authorization-restricted resources. Users who have appropriate institutional approval and licensing may integrate their own private retrieval modules locally.
 
 ## Disclaimer
 
