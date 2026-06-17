@@ -4,7 +4,7 @@
 
 ORION is an **autonomous, interpretable, multi-agent, multimodal diagnostic system** designed to model disease diagnosis as a sequential process of collaborative clinical reasoning rather than a single static prediction task. The system coordinates specialized agents for clinical interpretation, diagnostic planning, immunohistochemistry recommendation, molecular testing recommendation, and final multimodal evidence integration.
 
-This repository contains the open-source workflow code for the text-based ORION agents. The pathology image analysis agent, referred to as **CPA** in this project, is maintained separately and is not included in this folder.
+This repository contains the open-source workflow code for the text-based ORION agents. 
 
 ## Quick Links
 
